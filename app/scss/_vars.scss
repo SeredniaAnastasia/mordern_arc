@@ -37,4 +37,11 @@ $squareFull: #353C43;
     background-color: $accent;
     border: none;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+%btn:hover{
+   background-color: #FAF8F2;
+   color: #C6A47E;
 }
