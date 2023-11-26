@@ -277,6 +277,7 @@
         z-index: 1;
         border: none;
         top: 40%;
+        cursor: pointer;
     }
 
     .slick-prev {
@@ -835,11 +836,9 @@
     &__item-img {
 
         display: inline-block;
+        padding: 15px;
+        border: 2px solid $accent;
 
-        img {
-            padding: 15px;
-            border: 2px solid $accent;
-        }
     }
 
     .star {
@@ -961,12 +960,14 @@
             border: none;
             border-bottom: 1px solid #FFFFFF40;
             background-color: transparent;
+            font-size: 1.4rem;
+            color: blanchedalmond;
         }
 
         &__input-name::placeholder {
             color: #fff;
             @extend %Poppins-400;
-            font-size: 16px;
+            // font-size: 16px;
         }
 
         &__input-number {
@@ -975,12 +976,14 @@
             border: none;
             border-bottom: 1px solid #FFFFFF40;
             background-color: transparent;
+            font-size: 1.4rem;
+            color: blanchedalmond;
         }
 
         &__input-number::placeholder {
             color: #fff;
             @extend %Poppins-400;
-            font-size: 16px;
+            // font-size: 16px;
         }
 
         &__input-btn {
@@ -994,7 +997,8 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: background-color .5s;
-            &:hover{
+
+            &:hover {
                 background-color: $accent;
 
             }
