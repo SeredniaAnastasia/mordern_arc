@@ -31,11 +31,8 @@ $squareFull: #353C43;
 %btn{
     padding: 14px 63px 13px 33px;
     color: #fff;
-    font-size: 16px;
     @extend %Poppins-600;
-    min-height: 50px;
     background-color: $accent;
-    border: none;
     text-transform: uppercase;
     cursor: pointer;
     transition: all .5s;

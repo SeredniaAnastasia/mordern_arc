@@ -3,6 +3,8 @@
 @import 'fonts';
 @import 'libs';
 @import 'global';
+@import 'blocks';
+
 
 .header {
     margin-bottom: 25px;
@@ -11,22 +13,9 @@
         padding-top: 28px;
     }
 
-    .logo {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
+    &__logo {
         margin-bottom: 15px;
 
-        &__img {
-            margin-top: -5px;
-        }
-
-        &__title {
-            @extend %Poppins-600;
-            font-size: 28px;
-            color: $accent;
-            text-transform: uppercase;
-        }
     }
 
     &__content {
@@ -34,40 +23,7 @@
         justify-content: space-between;
     }
 
-    &__social {
-        display: flex;
-        justify-content: space-between;
-        gap: 23px;
-    }
-
-    .menu {
-        &__list {
-            display: flex;
-            gap: 28px;
-
-        }
-
-        &__btn {
-            display: none;
-        }
-
-        &__link {
-            color: $textcolor;
-            font-size: 16px;
-            text-transform: uppercase;
-            @extend %Poppins-500;
-            transition: all .3s;
-
-            &:hover {
-                color: $accent;
-            }
-        }
-    }
-
-    &__info {
-        display: flex;
-        gap: 23px;
-    }
+   
 }
 
 .footer {
@@ -76,11 +32,6 @@
         background-repeat: no-repeat;
         min-height: 328px;
         width: 100%;
-    }
-
-    &__block {
-        min-height: 46px;
-
     }
 
     .logo {
@@ -102,41 +53,30 @@
     }
 
     .footer-top {
+        margin-bottom: 46px;
         &__inner {
             padding-top: 62px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-
+            gap: 30px;
         }
 
         &__item-text {
             @extend %Poppins-400;
-            font-size: 16px;
             max-width: 342px;
-            line-height: normal;
             margin-bottom: 25px;
         }
 
-        &__social-list {
-            display: flex;
-            justify-content: left;
-            gap: 20px;
+        &__social {
+            width: 150px;
         }
 
-        &__social-link {
-            img {
-                width: 25px;
-                height: 25px;
-
-            }
-        }
-
-        &__services-title {
-            @extend %Poppins-500;
+        &__title {
             font-size: 22px;
             text-transform: uppercase;
             margin-bottom: 25px;
+            @extend %Poppins-500;
         }
 
         &__services-item {
@@ -145,18 +85,9 @@
 
         &__services-link {
             @extend %Poppins-400;
-            font-size: 16px;
             color: $textcolor;
-            line-height: normal;
             text-transform: capitalize;
-        }
-
-        &__contacts-title {
-            @extend %Poppins-500;
-            font-size: 22px;
-            text-transform: uppercase;
-            margin-bottom: 28px;
-        }
+        }       
 
         &__contacts-item {
             display: flex;
@@ -181,9 +112,7 @@
         &__contacts-item-email,
         &__contacts-item-text {
             @extend %Poppins-400;
-            font-size: 16px;
             color: $textcolor;
-            line-height: normal;
         }
     }
 
@@ -196,9 +125,7 @@
 
         .footer__copy-link {
             @extend %Poppins-400;
-            font-size: 16px;
             color: $textcolor;
-            line-height: normal;
             text-align: center;
         }
     }
@@ -208,6 +135,10 @@
 .top-slider {
     &__item {
         position: relative;
+        overflow: hidden;
+    }
+    &__img{
+        object-fit: contain;
     }
 
     &__content {
@@ -232,7 +163,6 @@
 
     &__subtitle {
         font-size: 28px;
-        @extend %Poppins-500;
         text-transform: uppercase;
         color: $accent;
         margin-bottom: 16px;
@@ -240,13 +170,11 @@
 
     &__text {
         @extend %Poppins-400;
-        font-size: 16px;
         color: #fff;
         display: block;
         margin: 0 auto;
         margin-bottom: 20px;
         max-width: 412px;
-        line-height: normal;
     }
 
     &__btn {
@@ -263,6 +191,7 @@
             right: 35px;
         }
     }
+    
 
     .slick-prev,
     .slick-next {
@@ -290,6 +219,10 @@
         right: 25px;
 
     }
+    .slick-slide img {
+    
+        margin-left: calc( (100% - 1440px) / 2);
+    }
 
 }
 
@@ -300,7 +233,7 @@
         margin-bottom: 67px;
     }
 
-    &__inner-fon {
+    &__wrapper {
         padding-top: 67px;
         background-image: url('../images/fon.png');
         background-repeat: no-repeat;
@@ -327,13 +260,13 @@
         width: 269px;
         height: 188px;
         z-index: 1;
-        border: 20px solid #282D32;
+        border: 20px solid #282d32;
     }
 
     &__image-2 {
         position: absolute;
-        width: 388px;
-        height: 483px;
+        max-width: 388px;
+        width: 100%;
         top: 87px;
         left: 220px;
     }
@@ -390,11 +323,9 @@
     }
 
     &__text {
-        font-size: 16px;
         @extend %Poppins-400;
         max-width: 600px;
         margin-bottom: 25px;
-        line-height: normal;
     }
 
     &__btn {
@@ -469,11 +400,18 @@
         position: relative;
         display: inline-block;
         width: 100%;
+        height: 100%;
         z-index: 1;
 
         img {
-            width: 360px;
+            max-width: 360px;
+            height: 100%;
+            width: 100%;
         }
+    }
+    &__item-img:focus{
+        outline-offset: -3px;
+        outline: 3px solid #fff;
     }
 
     &__item-img::after {
@@ -517,8 +455,10 @@
 
     &__item {
         position: relative;
-        width: 393px;
-        height: 391px;
+        max-width: 393px;
+        width: 100%;
+        min-height: 391px;
+        padding-top: 80px;
         background-color: #353C43;
         text-align: center;
     }
@@ -545,8 +485,9 @@
 
     &__item-img {
         display: inline-block;
-        margin-top: 80px;
         margin-bottom: 20px;
+        width: 48px;
+        height: 52px;
     }
 
     &__item-title {
@@ -566,10 +507,8 @@
     &__item-text {
         display: inline-block;
         @extend %Poppins-400;
-        font-size: 16px;
         max-width: 300px;
         text-align: center;
-        line-height: normal;
     }
 
     &__btn {
@@ -609,6 +548,7 @@
     &__content {
         width: 100%;
         padding-left: 50px;
+        padding-top: 38px;
     }
 
     &__img {
@@ -619,8 +559,11 @@
         max-width: 400px;
         display: block;
         text-align: left;
-        margin-top: 38px;
         margin-bottom: 26px;
+    }
+
+    &__list {
+        counter-reset: number;
     }
 
     &__item {
@@ -637,13 +580,19 @@
         display: inline-block;
         border: 6px solid #494949;
         margin-right: 30px;
+       
+    }
+
+    &__item-num:before {
+        counter-increment: number;
+        content: counter(number);
     }
 
     &__item-title {
         position: relative;
-        @extend %Poppins-500;
         font-size: 24px;
         margin-bottom: 26px;
+        @extend %Poppins-500;
 
         &::before {
             content: '';
@@ -657,8 +606,6 @@
 
     &__item-text {
         @extend %Poppins-400;
-        font-size: 16px;
-        line-height: normal;
         max-width: 450px;
     }
 
@@ -667,7 +614,7 @@
 
         &__list {
             display: flex;
-            height: 200px;
+            min-height: 200px;
             justify-content: center;
             align-items: center;
             gap: 100px;
@@ -689,30 +636,28 @@
         }
     }
 }
-
+.team {
 .team {
     margin-bottom: 86px;
 
     &__inner {
-        width: 100%;
-    }
-
-    &__fon {
         background-image: url('../images/fon.png');
-        background-repeat: no-repeat;
+        background-repeat: repeat;
+
         min-height: 728px;
+        padding-top: 85px;
         width: 100%;
-        z-index: -1;
+        margin-bottom: 90px;
     }
 
     &__title {
-        padding-top: 86px;
         margin-bottom: 66px;
     }
 
     &__list {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 30px;
     }
 
@@ -737,7 +682,6 @@
     }
 
     &__item-name {
-        @extend %Poppins-500;
         font-size: 20px;
         padding-top: 21px;
         margin-bottom: 4px;
@@ -745,10 +689,10 @@
 
     &__item-title {
         @extend %Poppins-400;
-        font-size: 16px;
         color: $accent;
 
     }
+}
 }
 
 .testimonial {
@@ -760,16 +704,18 @@
         margin-bottom: 67px;
     }
 
-    &__list {
+    .testimonial__list {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         gap: 30px;
     }
 
     &__item {
         position: relative;
-        width: 393px;
+        max-width: 393px;
+        width: 100%;
         height: 445px;
+        padding-top: 70px;
         background-color: #353C43;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         text-align: center;
@@ -807,9 +753,6 @@
 
     &__item-text {
         @extend %Poppins-400;
-        font-size: 16px;
-        line-height: normal;
-        margin-top: 70px;
         max-width: 300px;
         display: inline-block;
         text-align: center;
@@ -819,15 +762,12 @@
     &__item-name {
         @extend %Poppins-600;
         font-size: 24px;
-        line-height: normal;
         margin-bottom: 11px;
         text-transform: capitalize;
     }
 
     &__item-title {
-        @extend %Poppins-400;
-        font-size: 16px;
-        line-height: normal;
+        @extend %Poppins-400;      
         color: $accent;
         text-transform: uppercase;
         margin-bottom: 22px;
@@ -850,7 +790,7 @@
         background-color: $squareFull;
 
         &__list {
-            height: 150px;
+            min-height: 150px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -897,36 +837,31 @@
         justify-content: space-between;
         color: $accent;
         @extend %Poppins-400;
-        font-size: 16px;
         margin-bottom: 20px;
     }
 
     &__box-autor {
         color: $accent;
         @extend %Poppins-400;
-        font-size: 16px;
     }
 
     &__item-title {
-        @extend %Poppins-500;
         font-size: 18px;
         max-width: 293px;
         margin-bottom: 10px;
+        @extend %Poppins-500;
     }
 
     &__item-text {
         @extend %Poppins-400;
         font-size: 15px;
-        line-height: normal;
         max-width: 293px;
         margin-bottom: 10px;
     }
 
     &__item-link {
         @extend %Poppins-400;
-        font-size: 16px;
         color: $accent;
-        line-height: normal;
         text-decoration-line: underline;
     }
 
@@ -941,7 +876,6 @@
         }
 
         &__title {
-            @extend %Poppins-500;
             font-size: 34px;
             color: $accent;
             text-transform: capitalize;
@@ -967,7 +901,6 @@
         &__input-name::placeholder {
             color: #fff;
             @extend %Poppins-400;
-            // font-size: 16px;
         }
 
         &__input-number {
@@ -983,13 +916,11 @@
         &__input-number::placeholder {
             color: #fff;
             @extend %Poppins-400;
-            // font-size: 16px;
         }
 
         &__input-btn {
             color: #fff;
             @extend %Poppins-600;
-            font-size: 16px;
             width: 182px;
             min-height: 60px;
             border: 1px solid $accent;
