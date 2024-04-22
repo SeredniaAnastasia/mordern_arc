@@ -31,9 +31,6 @@
             width: 90%;
         }
 
-        &__inner {
-            flex-wrap: wrap;
-        }
     }
 
     .team {
@@ -133,11 +130,6 @@
         }
     }
 
-    .services {
-        &__items {
-            flex-wrap: wrap;
-        }
-    }
 
     .planning {
         .project-info {
@@ -156,13 +148,6 @@
     }
 }
 
-@media (max-width: 860px) {
-    .services {
-        &__items {
-            justify-content: center;
-        }
-    }
-}
 
 @media (max-width: 768px) {
     .planning {
