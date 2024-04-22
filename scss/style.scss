@@ -448,7 +448,8 @@
 
     &__items {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 30px;
         margin-bottom: 40px;
     }
@@ -533,7 +534,8 @@
 .planning {
     &__inner {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
         margin-bottom: 128px;
     }
 
