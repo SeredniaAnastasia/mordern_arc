@@ -2,7 +2,9 @@
   "name": "mordern_arc",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/eliofery/mordern_arc",
+  "homepage1": "https://github.com/seredmii/mordern_arc",
+  "homepage": "./",
+
   "main": "gulpfile.js",
   "scripts": {
     "deploy": "gh-pages -d app", 
